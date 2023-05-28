@@ -16,7 +16,79 @@ datasource db {
     relationMode = "prisma"
 }
 
+model Currency {
+    id     String @id @default(cuid())
+    name   String
+    symbol String
+    User   User[]
+}
+
+model Expense {
+    id          String   @id @default(cuid())
+    createdDate DateTime @default(now())
+    amount      Float
+    user        User     @relation(fields: [userId], references: [id])
+    userId      String
+    Budget      Budget?  @relation(fields: [budgetId], references: [id])
+    budgetId    String?
+
+    @@index([budgetId])
+    @@index([userId])
+}
+
+model Income {
+    id          String   @id @default(cuid())
+    createdDate DateTime @default(now())
+    amount      Float
+    user        User     @relation(fields: [userId], references: [id])
+    userId      String
+
+    @@index(fields: [userId])
+}
+
+model Goal {
+    id          String   @id @default(cuid())
+    createdDate DateTime @default(now())
+    dueDate     DateTime
+    amount      Float
+    user        User     @relation(fields: [userId], references: [id])
+    userId      String   @unique
+
+    @@index([userId])
+}
+
+model Budget {
+    id          String    @id @default(cuid())
+    createdDate DateTime  @default(now())
+    dueDate     DateTime
+    amount      Float
+    expenses    Expense[]
+    user        User      @relation(fields: [userId], references: [id])
+    userId      String
+
+    @@index([userId])
+}
+
 // Necessary for Next auth
+model User {
+    id            String    @id @default(cuid())
+    name          String?
+    email         String?   @unique
+    emailVerified DateTime?
+    image         String?
+    accounts      Account[]
+    sessions      Session[]
+    totalMoney    Float     @default(0)
+    currency      Currency? @relation(fields: [currencyId], references: [id])
+    currencyId    String?
+    Expense       Expense[]
+    Income        Income[]
+    Budget        Budget[]
+    Goal          Goal?
+
+    @@index(fields: [currencyId])
+}
+
 model Account {
     id                String  @id @default(cuid())
     userId            String
@@ -33,6 +105,7 @@ model Account {
     user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
     @@unique([provider, providerAccountId])
+    @@index([userId])
 }
 
 model Session {
@@ -41,16 +114,8 @@ model Session {
     userId       String
     expires      DateTime
     user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-}
 
-model User {
-    id            String    @id @default(cuid())
-    name          String?
-    email         String?   @unique
-    emailVerified DateTime?
-    image         String?
-    accounts      Account[]
-    sessions      Session[]
+    @@index([userId])
 }
 
 model VerificationToken {
