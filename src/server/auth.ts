@@ -8,6 +8,7 @@ import {
 import { env } from "@/env.mjs";
 import GoogleProvider from "next-auth/providers/google";
 import { prisma } from "@/server/db";
+import { randomUUID, randomBytes } from "crypto";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -37,16 +38,26 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
+    session: ({ session, token }) => ({
       ...session,
       user: {
         ...session.user,
-        id: user.id,
+        id: token.sub,
       },
     }),
     redirect() {
       return "/dashboard";
     },
+  },
+  session: {
+    strategy: "jwt",
+    maxAge: 29 * 24 * 60 * 60, // 30 days
+    generateSessionToken: () => {
+      return randomUUID?.() ?? randomBytes(32).toString("hex");
+    },
+  },
+  jwt: {
+    maxAge: 29 * 24 * 60 * 60, // 30 days
   },
   adapter: PrismaAdapter(prisma),
   providers: [
