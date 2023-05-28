@@ -44,6 +44,9 @@ export const authOptions: NextAuthOptions = {
         id: user.id,
       },
     }),
+    redirect() {
+      return "/dashboard";
+    },
   },
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -52,6 +55,11 @@ export const authOptions: NextAuthOptions = {
       clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  pages: {
+    signIn: "/signin",
+    newUser: "/dashboard?tour=true",
+    signOut: "/",
+  },
 };
 
 /**
