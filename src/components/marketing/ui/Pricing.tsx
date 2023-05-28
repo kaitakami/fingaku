@@ -1,4 +1,4 @@
-import SectionWrapper from "@/components/SectionWrapper";
+import SectionWrapper from "@/components/marketing/SectionWrapper";
 import Button from "./Button";
 
 const Pricing = () => {

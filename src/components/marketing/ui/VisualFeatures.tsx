@@ -1,4 +1,4 @@
-import SectionWrapper from "@/components/SectionWrapper"
+import SectionWrapper from "@/components/marketing/SectionWrapper"
 import Image from "next/image"
 
 const VisualFeatures = () => {

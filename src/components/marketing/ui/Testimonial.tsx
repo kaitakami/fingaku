@@ -1,5 +1,5 @@
-import SectionWrapper from "@/components/SectionWrapper"
-import GradientWrapper from "@/components/GradientWrapper"
+import SectionWrapper from "@/components/marketing/SectionWrapper"
+import GradientWrapper from "@/components/marketing/GradientWrapper"
 
 import Image from "next/image"
 
