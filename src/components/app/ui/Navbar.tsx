@@ -19,6 +19,8 @@ const AvatarMenu = () => {
     { title: "Objetivos", path: "/dashboard/objetivos" },
     { title: "Gastos", path: "/dashboard/gastos" },
     { title: "Presupuestos", path: "/dashboard/presupuestos" },
+    { title: "FingakuAI", path: "/dashboard/ai" },
+
   ]
 
 
@@ -37,14 +39,15 @@ const AvatarMenu = () => {
         <button ref={profileRef} className="hidden outline-none rounded-full ring-offset-2 ring-gray-200 lg:focus:ring-2 lg:block"
           onClick={() => setState(!state)}
         >
-          <Image
-            src={session?.user.image || ""}
+          {session?.user.image ? <Image
+            src={session?.user.image}
             className="rounded-full"
             alt={`${session?.user.name || ""} profile photo`}
             width={40}
             height={40}
             unoptimized
-          />
+          /> : <div className="rounded-full w-10 h-10 bg-zinc-300 items-center flex justify-center font-bold">{session?.user.name?.split("")[0]}</div>}
+
         </button>
       </div>
       <ul className={`bg-white top-14 right-0 mt-6 space-y-6 lg:absolute z-10 lg:border lg:rounded-md lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
@@ -79,6 +82,7 @@ const Navbar = () => {
     { title: "Objetivos", path: "/dashboard/objetivos" },
     { title: "Gastos", path: "/dashboard/gastos" },
     { title: "Presupuestos", path: "/dashboard/presupuestos" },
+    { title: "FingakuAI", path: "/dashboard/ai" },
   ]
 
 
