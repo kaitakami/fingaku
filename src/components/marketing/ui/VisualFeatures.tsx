@@ -17,7 +17,7 @@ const VisualFeatures = () => {
     ]
     return (
         <SectionWrapper>
-            <div className="custom-screen text-zinc-600">
+            <div className="max-w-screen-xl mx-auto px-4 text-zinc-600">
                 <div className="max-w-xl mx-auto text-center">
                     <h2 className="text-zinc-800 text-3xl font-semibold sm:text-4xl">
                         Lleva tus finanzas al siguiente nivel con Fingaku
@@ -30,7 +30,7 @@ const VisualFeatures = () => {
                     <ul className="space-y-8 gap-x-6 sm:flex sm:space-y-0">
                         {
                             features.map((item, idx) => (
-                                <li className="flex-1 flex flex-col justify-between border border-zinc-800 rounded-2xl" key={idx}
+                                <li className="flex-1 flex flex-col justify-between border border-zinc-300 rounded-2xl" key={idx}
                                     style={{
                                         background: "radial-gradient(141.61% 141.61% at 29.14% -11.49%, rgba(214, 214, 214, 0.5) 0%, rgba(190, 190, 190, 0.2) 57.72%)"
                                     }}
