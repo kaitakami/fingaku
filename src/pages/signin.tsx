@@ -26,7 +26,7 @@ export default function Login() {
             </div>
             <button
               type='button'
-              className='w-full flex items-center justify-center gap-x-3 py-2.5 border border-zinc-200 rounded-lg text-sm font-medium bg-zinc-200/40 hover:bg-zinc-200 ring-purple-500 focus:ring duration-150'
+              className='w-full flex items-center justify-center gap-x-3 py-2.5 border border-zinc-200 rounded-lg text-sm font-medium bg-zinc-200/40 hover:bg-zinc-200 ring-blue-500 focus:ring duration-150'
               onClick={handleSignIn}
             >
               <GoogleIcon />
@@ -34,7 +34,7 @@ export default function Login() {
             </button>
             <button
               type='button'
-              className='w-full flex items-center justify-center gap-x-3 py-2.5 border border-zinc-200 rounded-lg text-sm font-medium bg-zinc-200/40 hover:bg-zinc-200 ring-purple-500 focus:ring duration-150'
+              className='w-full flex items-center justify-center gap-x-3 py-2.5 border border-zinc-200 rounded-lg text-sm font-medium bg-zinc-200/40 hover:bg-zinc-200 ring-blue-500 focus:ring duration-150'
               onClick={handleSignIn}
             >
               <GoogleIcon />

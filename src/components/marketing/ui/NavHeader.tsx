@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Brand from "./Brand";
+import Brand from "@/components/marketing/ui/Brand";
 
 interface Props {
     onClick?: () => void;
@@ -11,10 +11,7 @@ interface Props {
 const NavHeader: React.FC<Props> = ({ onClick, state, menuBtnEl }) => (
     <div className="flex items-center justify-between py-5 md:block">
         <Link href="/" className="flex items-center gap-3">
-            <Brand />
-            <span className="text-lg font-semibold">
-                Fingaku
-            </span>
+            <Brand imageHeight={25} imageWidth={25} textClassName="text-lg font-semibold" />
         </Link>
         <div className="md:hidden">
             <button role="button" aria-label="Open the menu" ref={menuBtnEl || null} className="text-zinc-400 hover:text-zinc-800"

@@ -55,7 +55,7 @@ const Features = () => {
 
     return (
         <SectionWrapper>
-            <div id="caracteristicas" className="custom-screen text-zinc-500">
+            <div id="caracteristicas" className="max-w-screen-xl mx-auto px-4 text-zinc-500">
                 <div className="max-w-xl mx-auto text-center">
                     <h2 className="text-zinc-800 text-3xl font-semibold sm:text-4xl">
                         Se consciente de lo que gastas con Fingaku
@@ -68,7 +68,7 @@ const Features = () => {
                     <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                         {
                             featuresList.map((item, idx) => (
-                                <li key={idx} className="space-y-3 p-4 rounded-xl border border-gray-800"
+                                <li key={idx} className="space-y-3 p-4 rounded-xl border border-zinc-300"
                                     style={{
                                         background: "radial-gradient(157.73% 157.73% at 50% -29.9%, rgba(203, 213, 225, 0.16) 0%, rgba(203, 213, 225, 0) 100%)"
                                     }}

@@ -29,7 +29,7 @@ const faqsList = [
 
 const FAQs = () => (
     <SectionWrapper id="faqs">
-        <div className="custom-screen text-zinc-600">
+        <div className="max-w-screen-xl mx-auto px-4 text-zinc-600">
             <div className="max-w-xl text-center xl:mx-auto">
                 <h2 className="text-zinc-800 text-3xl font-extrabold sm:text-4xl">
                     Todo lo que necesitas saber

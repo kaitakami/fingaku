@@ -35,7 +35,7 @@ const Pricing = () => {
     ];
 
     return (
-        <SectionWrapper id="pricing" className='custom-screen'>
+        <SectionWrapper id="pricing" className='max-w-screen-xl mx-auto px-4'>
             <div className='relative max-w-xl mx-auto text-center'>
                 <h2 className='text-zinc-800 text-3xl font-semibold sm:text-4xl'>
                     Paga solo por lo que usas

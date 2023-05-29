@@ -5,7 +5,7 @@ import NavLink from "./NavLink"
 const CTA = () => (
     <section>
         <GradientWrapper wrapperClassName="max-w-xs h-[13rem] top-12 inset-0">
-            <div className="custom-screen py-28 relative">
+            <div className="max-w-screen-xl mx-auto px-4 py-28 relative">
                 <div className="relative z-10">
                     <div className="max-w-xl mx-auto text-center">
                         <h2 className="text-zinc-800 text-3xl font-semibold sm:text-4xl">

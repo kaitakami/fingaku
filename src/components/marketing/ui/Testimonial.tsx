@@ -46,7 +46,7 @@ const Testimonial = () => {
 
     return (
         <SectionWrapper>
-            <div id="testimonials" className="custom-screen text-zinc-500">
+            <div id="testimonials" className="max-w-screen-xl mx-auto px-4 text-zinc-500">
                 <div className="max-w-2xl text-center md:mx-auto">
                     <h2 className="text-zinc-800 text-3xl font-semibold sm:text-4xl">
                         Fingaku es amado por estudiantes alrededor del mundo
@@ -56,7 +56,7 @@ const Testimonial = () => {
                     <ul className="grid gap-6 duration-1000 delay-300 ease-in-out sm:grid-cols-2 lg:grid-cols-3">
                         {
                             testimonials.map((item, idx) => (
-                                <li key={idx} className="p-4 rounded-xl border border-gray-800"
+                                <li key={idx} className="p-4 rounded-xl border border-zinc-300"
                                     style={{
                                         backgroundImage: "radial-gradient(100% 100% at 50% 50%, rgba(124, 58, 237, 0.05) 0%, rgba(124, 58, 237, 0) 100%)"
                                     }}

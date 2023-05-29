@@ -4,7 +4,7 @@ import NavLink from "./NavLink"
 
 const Hero = () => (
     <section>
-        <div className="custom-screen py-28">
+        <div className="max-w-screen-xl mx-auto px-4 py-28">
             <div>
                 <div className="space-y-5 max-w-3xl mx-auto text-center">
                     <h1 className="text-4xl bg-clip-text text-transparent bg-gradient-to-r font-extrabold mx-auto sm:text-6xl"
