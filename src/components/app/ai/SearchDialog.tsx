@@ -81,7 +81,6 @@ export function SearchDialog() {
       }
 
       if (e.key === 'Escape') {
-        console.log('esc')
         handleModalToggle()
       }
     }
@@ -173,7 +172,6 @@ export function SearchDialog() {
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault()
-    console.log(search)
 
     // eslint-disable-next-line @typescript-eslint/no-floating-promises
     handleConfirm(search)
