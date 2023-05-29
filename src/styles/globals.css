@@ -95,10 +95,6 @@
 }
 
 
-.custom-screen {
-  @apply max-w-screen-xl mx-auto px-4;
-}
-
 .custom-btn-bg {
   background: radial-gradient(67.5% 67.5% at 50% 50%, #599eff 0%, rgb(41, 130, 255) 100%)
 }

@@ -3,7 +3,10 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: ["src/**/*.{ts,tsx}"],
+  content: [
+    "src/**/*.{ts,tsx}",
+    "./node_modules/@tremor/**/*.{js,ts,jsx,tsx}", // Tremor module
+  ],
   theme: {
     container: {
       center: true,
