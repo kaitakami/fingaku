@@ -9,17 +9,14 @@ export const incomeRouter = createTRPCRouter({
         name: z.string(),
         date: z.date(),
         amount: z.number(),
-        userId: z.string(),
       })
     )
     .mutation(async ({ ctx, input }) => {
       try {
         await ctx.prisma.income.create({
           data: {
-            name: input.name,
-            createdDate: input.date,
-            amount: input.amount,
-            userId: input.userId,
+            ...input,
+            userId: ctx.session.user.id,
           },
         });
       } catch (error) {
