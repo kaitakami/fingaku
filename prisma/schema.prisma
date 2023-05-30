@@ -25,10 +25,11 @@ model Currency {
 
 model Expense {
     id          String   @id @default(cuid())
+    date        DateTime
     createdDate DateTime @default(now())
     name        String
     amount      Float
-    user        User     @relation(fields: [userId], references: [id])
+    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId      String
     Budget      Budget?  @relation(fields: [budgetId], references: [id])
     budgetId    String?
@@ -39,10 +40,11 @@ model Expense {
 
 model Income {
     id          String   @id @default(cuid())
+    date        DateTime
     createdDate DateTime @default(now())
     name        String
     amount      Float
-    user        User     @relation(fields: [userId], references: [id])
+    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId      String
 
     @@index(fields: [userId])
@@ -53,8 +55,8 @@ model Goal {
     createdDate DateTime @default(now())
     dueDate     DateTime
     amount      Float
-    user        User     @relation(fields: [userId], references: [id])
-    userId      String   @unique
+    user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId      String
 
     @@index([userId])
 }
@@ -65,29 +67,39 @@ model Budget {
     dueDate     DateTime
     amount      Float
     expenses    Expense[]
-    user        User      @relation(fields: [userId], references: [id])
+    user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
     userId      String
+
+    @@index([userId])
+}
+
+model Transaction {
+    id          String   @id @default(cuid())
+    createdDate DateTime @default(now())
+    total       Float
+    User        User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+    userId      String?
 
     @@index([userId])
 }
 
 // Necessary for Next auth
 model User {
-    id            String    @id @default(cuid())
+    id            String        @id @default(cuid())
     name          String?
-    email         String?   @unique
+    email         String?       @unique
     emailVerified DateTime?
     image         String?
     accounts      Account[]
     sessions      Session[]
-    totalMoney    Float     @default(0)
-    currency      Currency? @relation(fields: [currencyId], references: [id])
+    totalMoney    Transaction[]
+    currency      Currency?     @relation(fields: [currencyId], references: [id])
     currencyId    String?
     Expense       Expense[]
     Income        Income[]
     Budget        Budget[]
-    Goal          Goal?
-    pro           Boolean   @default(false)
+    Goal          Goal[]
+    pro           Boolean       @default(false)
 
     @@index(fields: [currencyId])
 }
