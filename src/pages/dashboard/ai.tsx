@@ -11,7 +11,7 @@ export default function AI() {
           <p>
             Has preguntas relacionadas con Fingaku o Finanzas y nuestra inteligencia artificial intentará responderte!
           </p>
-          <span className='opacity-70 text-sm'>Versión Beta, verifica la información antes de proceder</span>
+          <span className='opacity-70 text-sm'>Versión Beta, verifica la información antes de proceder, nada es consejo financiero.</span>
         </div>
         <SearchDialog />
       </main>
