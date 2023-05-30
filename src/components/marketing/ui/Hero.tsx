@@ -29,15 +29,17 @@ const Hero = () => (
                         </NavLink>
                     </div>
                 </div>
-                <GradientWrapper className="mt-16 sm:mt-28 relative" wrapperClassName="max-w-3xl h-[250px] inset-0 sm:h-[300px] lg:h-[650px]">
+                <GradientWrapper className="mt-16 sm:mt-28 relative" wrapperclassname="max-w-3xl h-[250px] inset-0 sm:h-[300px] lg:h-[650px]">
                     <div
                         className="h-[250px] sm:h-[300px] md:h-[650px] w-full m-auto"
                     >
                         <Image
-                            src={"/images/hero.svg"}
+                            src={"/images/fingakulp.webp"}
                             className="shadow-lg rounded-2xl object-cover"
                             alt="Fingaku"
-                            fill
+                            width={1465}
+                            height={900}
+                            priority
                         />
                     </div>
                 </GradientWrapper>
