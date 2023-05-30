@@ -1,5 +1,6 @@
 import SectionWrapper from "@/components/marketing/SectionWrapper";
-import Button from "./Button";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 
 const Pricing = () => {
 
@@ -10,13 +11,13 @@ const Pricing = () => {
             price: 0,
             isMostPop: false,
             features: [
-                "Crea presupuestos",
                 "Establece metas financieras",
-                "Automatiza tus gastos y ganancias",
+                "Automatiza tus gastos y Ingresos",
                 "Analíticas",
                 "Soporte 24 / 7",
                 "Accede desde donde quieras",
             ],
+            checkout: "/signin"
         },
         {
             name: "Pro",
@@ -24,13 +25,13 @@ const Pricing = () => {
             price: 1.9,
             isMostPop: true,
             features: [
-                "Crea presupuestos",
                 "Establece metas financieras",
-                "Automatiza tus gastos y ganancias",
+                "Automatiza tus gastos y Ingresos",
                 "Analíticas",
                 "Soporte 24 / 7",
                 "Usa nuestra inteligencia artificial"
             ],
+            checkout: "https://fingaku.lemonsqueezy.com/checkout/buy/6b12b2c0-399d-4370-b542-91a6002d3c0e?embed=1"
         },
     ];
 
@@ -68,7 +69,7 @@ const Pricing = () => {
                                                     viewBox='0 0 20 20'
                                                     fill='currentColor'>
                                                     <path
-                                                        fill-rule='evenodd'
+                                                        fillRule='evenodd'
                                                         d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
                                                         clipRule='evenodd'></path>
                                                 </svg>
@@ -78,9 +79,9 @@ const Pricing = () => {
                                     }
                                 </ul>
                                 <div className="pt-8">
-                                    <Button className={`w-full rounded-full text-white ring-offset-2 focus:ring ${item.isMostPop ? "bg-blue-600 hover:bg-blue-500 focus:bg-blue-700 ring-blue-600" : "bg-gray-800 hover:bg-gray-700 ring-gray-800"}`}>
+                                    <Link href={item.checkout} className={`${buttonVariants()} w-full rounded-full text-white ring-offset-2 focus:ring ${item.isMostPop ? "!bg-blue-600 hover:bg-blue-500 focus:bg-blue-700 ring-blue-600" : "!bg-gray-800 hover:bg-gray-700 ring-gray-800"}`}>
                                         Iniciar ahora
-                                    </Button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
