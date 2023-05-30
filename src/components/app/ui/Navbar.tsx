@@ -18,7 +18,6 @@ const AvatarMenu = () => {
     { title: "Dashboard", path: "/dashboard" },
     { title: "Objetivos", path: "/dashboard/objetivos" },
     { title: "Gastos", path: "/dashboard/gastos" },
-    { title: "Presupuestos", path: "/dashboard/presupuestos" },
     { title: "FingakuAI", path: "/dashboard/ai" },
 
   ]
@@ -81,7 +80,6 @@ const Navbar = () => {
     { title: "Dashboard", path: "/dashboard" },
     { title: "Objetivos", path: "/dashboard/objetivos" },
     { title: "Gastos", path: "/dashboard/gastos" },
-    { title: "Presupuestos", path: "/dashboard/presupuestos" },
     { title: "FingakuAI", path: "/dashboard/ai" },
   ]
 
