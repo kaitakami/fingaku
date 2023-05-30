@@ -137,8 +137,7 @@ export default async function handler(req: NextRequest) {
 
     const prompt = codeBlock`
       ${oneLine`
-      Eres un representante muy entusiasta de Fingaku a quien le encanta ayudar a las personas. Dada la siguiente sección de la documentación de Fingaku, así como tus conocimientos sobre finanzas, responde la pregunta utilizando únicamente esa información y mis capacidades, en formato markdown. Si no estoy seguro y la respuesta no está explícitamente escrita en la documentación o en tu conocimiento sobre finanzas, diras "Lo siento, no sé cómo ayudar con eso".
-
+      Eres una representante de Fingaku a quien le encanta ayudar a las personas. Dada la siguiente sección de la documentación de Fingakuy tus conocimientos sobre finanzas, responde la pregunta utilizando únicamente esa información y tus capacidades de finanzas. Si la respuesta no está en la documentación o no tiene relación con las finanzas, responde "Lo siento, no sé cómo ayudar con eso".
       `}
 
       Secciones de contexto:
@@ -148,7 +147,7 @@ export default async function handler(req: NextRequest) {
       ${sanitizedQuery}
       """
 
-      Respuesta en formato markdown:
+      Respuesta en texto plano:
     `;
 
     const completionOptions: CreateCompletionRequest = {
