@@ -1,10 +1,9 @@
 import GradientWrapper from "@/components/marketing/GradientWrapper"
-import Image from "next/image"
 import NavLink from "./NavLink"
 
 const CTA = () => (
     <section>
-        <GradientWrapper wrapperClassName="max-w-xs h-[13rem] top-12 inset-0">
+        <GradientWrapper wrapperclassname="max-w-xs h-[13rem] top-12 inset-0">
             <div className="max-w-screen-xl mx-auto px-4 py-28 relative">
                 <div className="relative z-10">
                     <div className="max-w-xl mx-auto text-center">
