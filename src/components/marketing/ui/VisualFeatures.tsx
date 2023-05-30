@@ -1,5 +1,4 @@
 import SectionWrapper from "@/components/marketing/SectionWrapper"
-import Image from "next/image"
 
 const VisualFeatures = () => {
 
@@ -7,12 +6,10 @@ const VisualFeatures = () => {
         {
             title: "Accesible para todos",
             desc: "Casi todas las funcionalidades son gratuitas, no buscamos generar ingresos con Fingaku, solo lo necesario para sobrevivir.",
-            img: "/images/Feature-1.svg"
         },
         {
             title: "Actualizado al 2023",
             desc: "Sabemos que la IA está revolucionando el mundo, no nos quedamos atrás. Pregúnta a la Inteligencia Artificial y recibe consejos.",
-            img: "images/Feature-2.svg"
         },
     ]
     return (
@@ -42,14 +39,6 @@ const VisualFeatures = () => {
                                         <p className="mt-3 sm:text-sm md:text-base">
                                             {item.desc}
                                         </p>
-                                    </div>
-                                    <div className="pl-8 relative">
-                                        <Image
-                                            src={item.img}
-                                            className="w-full ml-auto object-cover"
-                                            alt={item.title}
-                                            fill
-                                        />
                                     </div>
                                 </li>
                             ))
