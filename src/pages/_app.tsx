@@ -3,6 +3,12 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import { api } from "@/utils/api";
 import "@/styles/globals.css";
+import { DM_Sans } from "next/font/google";
+
+const dmSans = DM_Sans({
+  weight: ["400", "500", "700"],
+  subsets: ['latin']
+})
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -10,7 +16,9 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      <div className={dmSans.className}>
+        <Component {...pageProps} />
+      </div>
     </SessionProvider>
   );
 };
