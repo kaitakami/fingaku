@@ -33,7 +33,7 @@ const AvatarMenu = () => {
   }, [])
 
   return (
-    <div className="relative border-t lg:border-none">
+    <div className=" border-t lg:border-none">
       <div className="">
         <button ref={profileRef} className="hidden outline-none rounded-full ring-offset-2 ring-gray-200 lg:focus:ring-2 lg:block"
           onClick={() => setState(!state)}
@@ -49,7 +49,7 @@ const AvatarMenu = () => {
 
         </button>
       </div>
-      <ul className={`bg-white top-14 right-0 mt-6 space-y-6 lg:absolute z-10 lg:border lg:rounded-md lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
+      <ul className={`bg-white top-14 right-0 mt-6 space-y-6 lg:absolute lg:border lg:rounded-md lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
         {
           navigation.map((item, id) => (
             <li key={id}>
@@ -86,7 +86,7 @@ const Navbar = () => {
 
   return (
     <header className="text-base lg:text-sm">
-      <div className={`bg-white items-center gap-x-14 px-4 max-w-screen-xl mx-auto lg:flex lg:px-8 lg:static ${state ? "h-full fixed inset-x-0" : ""}`}>
+      <div className={`bg-white items-center gap-x-14 px-4 max-w-screen-xl mx-auto lg:flex lg:px-8 lg:static z-10 ${state ? "h-full fixed inset-x-0" : ""}`}>
         <div className="flex items-center justify-between py-3 lg:py-5 lg:block">
           <Link href="/">
             <Brand imageHeight={25} imageWidth={25} textClassName="text-lg font-bold" />
